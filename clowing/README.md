@@ -1,16 +1,63 @@
-# clowing
+# Clowing
+- 창의아이디어 본선 앱
 
-A new Flutter project.
+## 기능
+1. 옷장
+  - 카테고리(상의 하의 등)별 의상 확인 기능 (스크롤)
+  - 옷 검색 (옷 이름을 통해 검색? 혹은 카테고리를 통해 검색? 모르겟음 카테고리가 더 나을것같음)
+  - 옷 추가하기 -> 옷사진등록(카메라, 이미지) -> 글쓰기(입력해야하는것: 옷 이름, 색상, 소재(소재 택 인식 카메라)
 
-## Getting Started
+2. 세탁기
+  - ootd에서 따온 착용 이력을 기반으로 세탁 알림 제공
+  - 상세페이지에서 옷 소재 별 빨래 가이드 제공
 
-This project is a starting point for a Flutter application.
+3. Ootd
+  - 오늘 입을 옷 고르기 -> 옷이 리스트화됨(날짜 데이터 필요)
 
-A few resources to get you started if this is your first Flutter project:
+4. ai코디 추천
+  - 사용자 지정 색상 + 사용자 선호도 기반 코디 추천(옷장에 있는 옷으로)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 파일 구조
+```
+lib/
+├── main.dart
+└── screens/
+    ├── mypage_screen.dart
+    ├── closet/
+    │   ├── closet_main.dart
+    │   ├── clothes/
+    │   │   ├── bag_screen.dart
+    │   │   ├── fashion_screen.dart
+    │   │   ├── low_screen.dart
+    │   │   ├── outer_screen.dart
+    │   │   ├── shoes_screen.dart
+    │   │   └── top_screen.dart
+    │   ├── add/
+    │   │   └── add_screen.dart
+    │   └── fin/
+    │       └── finish_screen.dart
+    ├── washing/
+    │   ├── washing_main.dart
+    │   ├── washing_screen.dart
+    │   ├── washing_details_screen.dart
+    │   └── washing_completed_screen.dart
+    ├── ootd/
+    │   ├── ootd_main.dart
+    │   ├── choose_screen.dart
+    │   ├── decision_screen.dart
+    │   └── ootd_completion_screen.dart
+    ├── ai/
+    │   ├── ai_main.dart
+    │   ├── ai_input_screen.dart
+    │   ├── ai_running_screen.dart
+    │   ├── ai_complete_screen.dart
+    │   └── ai_storage_screen.dart
+    ├── start/
+    │   ├── login_main.dart
+    │   ├── gender_screen.dart
+    │   ├── age_screen.dart
+    │   ├── height_screen.dart
+    │   └── login_successful_screen.dart
+    └── splash/
+        └── splash.dart
+```
