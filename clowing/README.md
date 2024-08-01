@@ -61,3 +61,5 @@ lib/
     └── splash/
         └── splash.dart
 ```
+
+# tlqkf 진짜 잘 되자
