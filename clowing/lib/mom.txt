@@ -1,0 +1,11 @@
+AddButton 사용하는 방법
+
+AddButton(
+              text: "아이템 추가",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AddScreen()),
+                );
+              },
+            ),

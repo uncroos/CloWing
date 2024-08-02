@@ -1,4 +1,5 @@
-import 'package:clowing/screens/mypage_screen.dart';
+import 'package:clowing/screens/closet/closet_main.dart';
+
 import 'package:flutter/material.dart';
 
 class LoginSuccessfulScreen extends StatefulWidget {
@@ -38,7 +39,7 @@ class _LoginSuccessfulScreenState extends State<LoginSuccessfulScreen> {
         // Navigate to the login successful screen
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MyPageScreen()),
+          MaterialPageRoute(builder: (context) => ClosetMainScreen()),
         );
       },
       child: Card(
