@@ -1,4 +1,4 @@
-import 'package:clowing/screens/mypage_screen.dart';
+import 'package:clowing/screens/start/login_main.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => MyPageScreen()),
+        MaterialPageRoute(builder: (context) => StartScreen()),
       );
     });
   }
