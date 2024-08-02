@@ -75,7 +75,10 @@ class _ClosetMainScreenState extends State<ClosetMainScreen> {
                   ),
                   child: Text(
                     '내 옷장 관리하기',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 17),
                   ),
                 ),
               ],
