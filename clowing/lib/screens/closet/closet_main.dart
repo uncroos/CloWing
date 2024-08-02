@@ -1,5 +1,5 @@
+import 'package:flutter/material.dart';
 import 'package:clowing/screens/mypage_screen.dart';
-import 'package:flutter/material.dart'; // Import the custom bottom nav bar widget
 
 class ClosetMainScreen extends StatefulWidget {
   @override
@@ -7,17 +7,9 @@ class ClosetMainScreen extends StatefulWidget {
 }
 
 class _ClosetMainScreenState extends State<ClosetMainScreen> {
-  void _onItemTapped(int index) {
-    setState(() {
-      // Navigate to different screens based on the index
-      // For now, it just changes the state and you can add navigation logic here
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Set the background color to white
       appBar: AppBar(
         title: Text('내 옷장', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
@@ -25,41 +17,71 @@ class _ClosetMainScreenState extends State<ClosetMainScreen> {
         centerTitle: true,
         automaticallyImplyLeading: false, // This removes the back button
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              'assets/images/closet.png', // Replace with your closet image asset path
-              width: 300,
-              height: 300,
+      body: Stack(
+        children: [
+          // Top 2/3 background color
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            height: MediaQuery.of(context).size.height * 3 / 5,
+            child: Container(
+              color: Colors.white, // 상단 2/3
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyPageScreen()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFFA89789), // 박스 색상
-                padding:
-                    EdgeInsets.symmetric(horizontal: 40, vertical: 15), // 내부 패딩
-                textStyle:
-                    TextStyle(fontSize: 16, color: Colors.white), // 글씨 색상
-                fixedSize: Size(330, 55), // 가로 및 세로 크기
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), // 라운드
+          ),
+          // Bottom 1/3 background color
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: MediaQuery.of(context).size.height * 2 / 5,
+            child: Container(
+              color: Color(0xFFF1E5DB), // 하단 1/3
+            ),
+          ),
+          // Content
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Center(
+                  child: SizedBox(
+                    width: 300,
+                    height: 300,
+                    child: Image.asset(
+                      'assets/images/closet.png', // Replace with your closet image asset path
+                      fit: BoxFit.contain, // 조정 방법 (fit 속성 사용 가능)
+                    ),
+                  ),
                 ),
-              ),
-              child: Text(
-                '내 옷장 관리하기',
-                style: TextStyle(color: Colors.white),
-              ),
+                SizedBox(height: 40),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyPageScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFFA89789), // 박스 색상
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 15), // 내부 패딩
+                    textStyle:
+                        TextStyle(fontSize: 16, color: Colors.white), // 글씨 색상
+                    fixedSize: Size(330, 55), // 가로 및 세로 크기
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10), // 라운드
+                    ),
+                  ),
+                  child: Text(
+                    '내 옷장 관리하기',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
