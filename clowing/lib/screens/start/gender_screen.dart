@@ -1,4 +1,4 @@
-import 'package:clowing/screens/start/login_successful_screen.dart';
+import 'package:clowing/screens/start/age_screen.dart';
 import 'package:flutter/material.dart';
 
 class GenderScreen extends StatefulWidget {
@@ -66,8 +66,11 @@ class _GenderScreenState extends State<GenderScreen> {
                 });
               },
             ),
-            Spacer(), // This ensures the button stays at the bottom of the screen
-            nextPageButton(), // Call the method to display the button
+            SizedBox(
+              height: 420,
+              width: double.infinity,
+            ),
+            nextPageButton(),
           ],
         ),
       ),
@@ -80,7 +83,7 @@ class _GenderScreenState extends State<GenderScreen> {
         // Navigate to the login successful screen
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => LoginSuccessfulScreen()),
+          MaterialPageRoute(builder: (context) => AgeScreen()),
         );
       },
       child: Card(
@@ -111,10 +114,4 @@ class _GenderScreenState extends State<GenderScreen> {
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: GenderScreen(),
-  ));
 }

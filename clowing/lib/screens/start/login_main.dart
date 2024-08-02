@@ -1,5 +1,4 @@
 import 'package:clowing/screens/start/gender_screen.dart';
-import 'package:clowing/screens/start/login_successful_screen.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatefulWidget {

@@ -53,13 +53,13 @@ lib/
     │   ├── ai_complete_screen.dart
     │   └── ai_storage_screen.dart
     ├── start/
-    │   ├── login_main.dart
-    │   ├── gender_screen.dart
-    │   ├── age_screen.dart
-    │   ├── height_screen.dart
+    │   ├── login_main.dart                      - 8월 2일 완성
+    │   ├── gender_screen.dart                   - 8월 2일 완성
+    │   ├── age_screen.dart                      - 8월 2일 완성
+    │   ├── height_screen.dart                   - 8월 2일 완성
     │   └── login_successful_screen.dart
     └── splash/
-        └── splash.dart
+        └── splash.dart                          - 8월 2일 완성
 ```
 
 # tlqkf 진짜 잘 되자

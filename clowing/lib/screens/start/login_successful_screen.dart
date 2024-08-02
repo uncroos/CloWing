@@ -16,12 +16,15 @@ class _LoginSuccessfulScreenState extends State<LoginSuccessfulScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 230,
+            ),
             Image.asset(
               'assets/images/F2.png', // Replace with your logo image asset path
               width: 250,
               height: 250,
             ),
-            const SizedBox(height: 20), // Adds space between image and button
+            const SizedBox(height: 210), // Adds space between image and button
             nextPageButton(),
           ],
         ),
