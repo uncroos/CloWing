@@ -24,7 +24,7 @@ lib/
 └── screens/
     ├── mypage_screen.dart
     ├── closet/
-    │   ├── closet_main.dart
+    │   ├── closet_main.dart                     - 8월 3일 완성
     │   ├── clothes/
     │   │   ├── bag_screen.dart
     │   │   ├── fashion_screen.dart
@@ -37,17 +37,17 @@ lib/
     │   └── fin/
     │       └── finish_screen.dart
     ├── washing/
-    │   ├── washing_main.dart
+    │   ├── washing_main.dart                    - 8월 3일 완성
     │   ├── washing_screen.dart
     │   ├── washing_details_screen.dart
     │   └── washing_completed_screen.dart
     ├── ootd/
-    │   ├── ootd_main.dart
+    │   ├── ootd_main.dart                       - 8월 3일 완성
     │   ├── choose_screen.dart
     │   ├── decision_screen.dart
     │   └── ootd_completion_screen.dart
     ├── ai/
-    │   ├── ai_main.dart
+    │   ├── ai_main.dart                         - 8월 3일 완성
     │   ├── ai_input_screen.dart
     │   ├── ai_running_screen.dart
     │   ├── ai_complete_screen.dart

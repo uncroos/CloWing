@@ -50,7 +50,7 @@ class _AiMainScreenState extends State<AiMainScreen> {
                     width: 300,
                     height: 300,
                     child: Image.asset(
-                      'assets/images/mannequin.png', // Replace with your closet image asset path
+                      'assets/images/search.png', // Replace with your closet image asset path
                       fit: BoxFit.contain, // 조정 방법 (fit 속성 사용 가능)
                     ),
                   ),
@@ -64,7 +64,7 @@ class _AiMainScreenState extends State<AiMainScreen> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF63A0C3), // 박스 색상
+                    backgroundColor: Color(0xFF8D8D8D), // 박스 색상
                     padding: EdgeInsets.symmetric(
                         horizontal: 40, vertical: 15), // 내부 패딩
                     textStyle:
@@ -75,7 +75,7 @@ class _AiMainScreenState extends State<AiMainScreen> {
                     ),
                   ),
                   child: Text(
-                    '데일리 룩북 관리하기',
+                    '코디 추천 받기',
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,

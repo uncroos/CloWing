@@ -1,3 +1,4 @@
+import 'package:clowing/screens/ai/ai_main.dart';
 import 'package:clowing/screens/closet/closet_main.dart';
 import 'package:clowing/screens/ootd/ootd_main.dart';
 import 'package:clowing/screens/splash/splash.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         '/closet_main': (context) => ClosetMainScreen(),
         '/washing_main': (context) => WashingMainScreen(),
         '/ootd_main': (context) => OotdMainScreen(),
+        '/ai_main': (context) => AiMainScreen(),
       },
     );
   }
