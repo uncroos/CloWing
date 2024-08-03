@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:clowing/screens/mypage_screen.dart';
+import 'package:clowing/widgets/bottom_nav_bar.dart';
+import 'package:flutter/material.dart';
 
 class ClosetMainScreen extends StatefulWidget {
   @override
@@ -86,6 +87,7 @@ class _ClosetMainScreenState extends State<ClosetMainScreen> {
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavBar(), // Add the BottomNavBar widget here
     );
   }
 }
