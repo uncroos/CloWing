@@ -12,7 +12,7 @@ class _AiMainScreenState extends State<AiMainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ootd', style: TextStyle(color: Colors.black)),
+        title: Text('코디 추천', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
@@ -37,7 +37,7 @@ class _AiMainScreenState extends State<AiMainScreen> {
             right: 0,
             height: MediaQuery.of(context).size.height * 2 / 5,
             child: Container(
-              color: Color(0xFFCCEDFF), // 하단 1/3
+              color: Color(0xFFCECECE), // 하단 1/3
             ),
           ),
           // Content

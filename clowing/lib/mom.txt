@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         '/closet_main': (context) => ClosetMainScreen(),
         '/washing_main': (context) => WashingMain(),
         '/ootd_main': (context) => OotdMainScreen(),
-        '/ai_main': (context) => AiMain(),
+        '/ai_main': (context) => AiMainScreen(),
       },
     );
   }
