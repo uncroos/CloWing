@@ -1,6 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
-class AddScreen extends StatelessWidget {
+class AddScreen extends StatefulWidget {
+  @override
+  _AddScreenState createState() => _AddScreenState();
+}
+
+class _AddScreenState extends State<AddScreen> {
+  File? _image;
+  Color? _selectedColor; // 색상 선택 상태 변수 추가
+  final _materialController = TextEditingController();
+  final _descriptionController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    // 리스너 추가
+    _materialController.addListener(() {
+      setState(() {}); // 문자 수가 변경될 때마다 UI를 업데이트
+    });
+    _descriptionController.addListener(() {
+      setState(() {}); // 문자 수가 변경될 때마다 UI를 업데이트
+    });
+  }
+
+  @override
+  void dispose() {
+    _materialController.dispose();
+    _descriptionController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _pickImage() async {
+    final pickedFile =
+        await ImagePicker().pickImage(source: ImageSource.camera);
+
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,9 +60,7 @@ class AddScreen extends StatelessWidget {
             Row(
               children: [
                 GestureDetector(
-                  onTap: () {
-                    // Implement image upload functionality
-                  },
+                  onTap: _pickImage,
                   child: Container(
                     width: 120,
                     height: 130,
@@ -28,8 +68,10 @@ class AddScreen extends StatelessWidget {
                       color: Colors.grey[300],
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Icon(Icons.camera_alt,
-                        size: 50, color: Colors.grey[600]),
+                    child: _image == null
+                        ? Icon(Icons.camera_alt,
+                            size: 50, color: Colors.grey[600])
+                        : Image.file(_image!, fit: BoxFit.cover),
                   ),
                 ),
                 SizedBox(width: 10),
@@ -86,10 +128,26 @@ class AddScreen extends StatelessWidget {
                   Colors.black,
                   Colors.brown
                 ])
-                  Container(
-                    width: 30,
-                    height: 30,
-                    color: color,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _selectedColor = color;
+                      });
+                    },
+                    child: Container(
+                      width: 30,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: color,
+                        border: Border.all(
+                          color: _selectedColor == color
+                              ? Colors.black
+                              : Colors.transparent,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.zero, // 네모 형태로 설정
+                      ),
+                    ),
                   ),
               ],
             ),
@@ -102,51 +160,64 @@ class AddScreen extends StatelessWidget {
                   children: [
                     Text('소재'),
                     Text(
-                      '100자까지 입력 가능합니다.',
+                      '${_materialController.text.length}/100',
                       style: TextStyle(fontSize: 12, color: Colors.grey),
                     ),
                   ],
                 ),
+                SizedBox(height: 8),
                 TextField(
+                  controller: _materialController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    suffixIcon: IconButton(
-                      icon: Icon(Icons.camera_alt),
-                      onPressed: () {
-                        // Implement material tag capture functionality
-                      },
-                    ),
-                    counterText: '',
+                    counterText: '', // 원래의 문자 수 카운터를 제거
                   ),
                   maxLength: 100,
                 ),
-              ],
-            ),
-            SizedBox(height: 50),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                SizedBox(height: 8),
+                Container(
+                  padding: EdgeInsets.all(8),
+                  child: Row(
+                    children: [
+                      Icon(Icons.camera_alt, color: Colors.blue),
+                      SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          '여기를 눌러 택을 촬영해보세요!',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 50),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('설명'),
-                    Text(
-                      '100자까지 입력 가능합니다.',
-                      style: TextStyle(fontSize: 12, color: Colors.grey),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('설명'),
+                        Text(
+                          '${_descriptionController.text.length}/100',
+                          style: TextStyle(fontSize: 12, color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                    TextField(
+                      controller: _descriptionController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        counterText: '', // 원래의 문자 수 카운터를 제거
+                      ),
+                      maxLength: 100,
+                      maxLines: 3,
                     ),
                   ],
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    counterText: '',
-                  ),
-                  maxLength: 100,
-                  maxLines: 3,
-                ),
+                SizedBox(height: 20),
               ],
             ),
-            SizedBox(height: 20),
           ],
         ),
       ),

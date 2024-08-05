@@ -1,5 +1,4 @@
 import 'package:clowing/screens/closet/add/add_screen.dart';
-import 'package:clowing/screens/mypage_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 

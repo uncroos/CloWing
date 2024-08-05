@@ -1,5 +1,4 @@
 import 'package:clowing/screens/closet/closet_main.dart';
-
 import 'package:flutter/material.dart';
 
 class LoginSuccessfulScreen extends StatefulWidget {
@@ -11,24 +10,23 @@ class _LoginSuccessfulScreenState extends State<LoginSuccessfulScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          Color.fromARGB(255, 255, 255, 255), // Light blue background color
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 230,
-            ),
-            Image.asset(
-              'assets/images/F2.png', // Replace with your logo image asset path
-              width: 250,
-              height: 250,
-            ),
-            const SizedBox(height: 210), // Adds space between image and button
-            nextPageButton(),
-          ],
-        ),
+      backgroundColor: Colors.white, // Light blue background color
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Spacer(),
+          Image.asset(
+            'assets/images/F2.png', // Replace with your logo image asset path
+            width: 250,
+            height: 250,
+          ),
+          Spacer(), // Takes up the remaining space
+          Padding(
+            padding: const EdgeInsets.only(
+                bottom: 80.0), // Adjust this value to position the button
+            child: nextPageButton(),
+          ),
+        ],
       ),
     );
   }
@@ -36,7 +34,7 @@ class _LoginSuccessfulScreenState extends State<LoginSuccessfulScreen> {
   Widget nextPageButton() {
     return InkWell(
       onTap: () {
-        // Navigate to the login successful screen
+        // Navigate to the closet main screen
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => ClosetMainScreen()),
@@ -56,7 +54,6 @@ class _LoginSuccessfulScreenState extends State<LoginSuccessfulScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(width: 10),
-              const SizedBox(width: 10),
               const Text(
                 "클로윙 시작하기",
                 style: TextStyle(
@@ -64,6 +61,7 @@ class _LoginSuccessfulScreenState extends State<LoginSuccessfulScreen> {
                     fontSize: 17,
                     fontWeight: FontWeight.bold),
               ),
+              const SizedBox(width: 10),
             ],
           ),
         ),

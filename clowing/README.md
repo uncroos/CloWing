@@ -33,7 +33,7 @@ lib/
     │   │   ├── shoes_screen.dart
     │   │   └── top_screen.dart
     │   ├── add/
-    │   │   └── add_screen.dart
+    │   │   └── add_screen.dart                  - 8월 4일 완성
     │   └── fin/
     │       └── finish_screen.dart
     ├── washing/

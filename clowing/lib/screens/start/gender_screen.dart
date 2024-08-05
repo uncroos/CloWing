@@ -16,8 +16,7 @@ class _GenderScreenState extends State<GenderScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      backgroundColor:
-          Color.fromARGB(255, 255, 255, 255), // Light blue background color
+      backgroundColor: Colors.white, // Light blue background color
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -66,11 +65,12 @@ class _GenderScreenState extends State<GenderScreen> {
                 });
               },
             ),
-            SizedBox(
-              height: 420,
-              width: double.infinity,
+            Spacer(), // This will take up the remaining space
+            Padding(
+              padding: const EdgeInsets.only(
+                  bottom: 60.0), // Adjust this value to move the button up
+              child: nextPageButton(),
             ),
-            nextPageButton(),
           ],
         ),
       ),
@@ -80,7 +80,7 @@ class _GenderScreenState extends State<GenderScreen> {
   Widget nextPageButton() {
     return InkWell(
       onTap: () {
-        // Navigate to the login successful screen
+        // Navigate to the next screen
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => AgeScreen()),

@@ -42,6 +42,8 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
+        // 추가된 설정: ImagePicker를 위한 설정
+        missingDimensionStrategy 'react-native-camera', 'general'
     }
 
     buildTypes {

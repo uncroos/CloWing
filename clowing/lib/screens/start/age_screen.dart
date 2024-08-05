@@ -74,11 +74,12 @@ class _AgeScreenState extends State<AgeScreen> {
                 });
               },
             ),
-            SizedBox(
-              height: 420,
-              width: double.infinity,
+            Spacer(), // This will take up the remaining space
+            Padding(
+              padding: const EdgeInsets.only(
+                  bottom: 60.0), // Adjust this value to move the button up
+              child: nextPageButton(),
             ),
-            nextPageButton(),
           ],
         ),
       ),
