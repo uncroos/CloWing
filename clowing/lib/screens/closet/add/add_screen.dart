@@ -1,3 +1,4 @@
+import 'package:clowing/screens/closet/fin/finish_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
@@ -9,19 +10,18 @@ class AddScreen extends StatefulWidget {
 
 class _AddScreenState extends State<AddScreen> {
   File? _image;
-  Color? _selectedColor; // 색상 선택 상태 변수 추가
+  Color? _selectedColor;
   final _materialController = TextEditingController();
   final _descriptionController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    // 리스너 추가
     _materialController.addListener(() {
-      setState(() {}); // 문자 수가 변경될 때마다 UI를 업데이트
+      setState(() {});
     });
     _descriptionController.addListener(() {
-      setState(() {}); // 문자 수가 변경될 때마다 UI를 업데이트
+      setState(() {});
     });
   }
 
@@ -145,7 +145,7 @@ class _AddScreenState extends State<AddScreen> {
                               : Colors.transparent,
                           width: 2,
                         ),
-                        borderRadius: BorderRadius.zero, // 네모 형태로 설정
+                        borderRadius: BorderRadius.zero,
                       ),
                     ),
                   ),
@@ -170,7 +170,7 @@ class _AddScreenState extends State<AddScreen> {
                   controller: _materialController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    counterText: '', // 원래의 문자 수 카운터를 제거
+                    counterText: '',
                   ),
                   maxLength: 100,
                 ),
@@ -208,7 +208,7 @@ class _AddScreenState extends State<AddScreen> {
                       controller: _descriptionController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        counterText: '', // 원래의 문자 수 카운터를 제거
+                        counterText: '',
                       ),
                       maxLength: 100,
                       maxLines: 3,
@@ -217,6 +217,34 @@ class _AddScreenState extends State<AddScreen> {
                 ),
                 SizedBox(height: 20),
               ],
+            ),
+            SizedBox(height: 35),
+            Center(
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FinishScreen()),
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.brown[200],
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    '완료',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
             ),
           ],
         ),

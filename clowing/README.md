@@ -26,16 +26,16 @@ lib/
     ├── closet/
     │   ├── closet_main.dart                     - 8월 3일 완성
     │   ├── clothes/
-    │   │   ├── bag_screen.dart
-    │   │   ├── fashion_screen.dart
-    │   │   ├── low_screen.dart
-    │   │   ├── outer_screen.dart
-    │   │   ├── shoes_screen.dart
-    │   │   └── top_screen.dart
+    │   │   ├── bag_screen.dart                  - 8월 5일 완성
+    │   │   ├── fashion_screen.dart              - 8월 5일 완성
+    │   │   ├── low_screen.dart                  - 8월 5일 완성
+    │   │   ├── outer_screen.dart                - 8월 5일 완성
+    │   │   ├── shoes_screen.dart                - 8월 5일 완성
+    │   │   └── top_screen.dart                  - 8월 5일 완성
     │   ├── add/
     │   │   └── add_screen.dart                  - 8월 4일 완성
     │   └── fin/
-    │       └── finish_screen.dart
+    │       └── finish_screen.dart               - 8월 5일 완성
     ├── washing/
     │   ├── washing_main.dart                    - 8월 3일 완성
     │   ├── washing_screen.dart

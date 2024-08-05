@@ -14,7 +14,10 @@ class _StartScreenState extends State<StartScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(
+                top: 330.0), // Adjust this value to position the button
+          ),
           Image.asset(
             'assets/images/F2.png', // Replace with your logo image asset path
             width: 250,
