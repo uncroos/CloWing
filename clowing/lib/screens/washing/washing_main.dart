@@ -1,4 +1,4 @@
-import 'package:clowing/screens/mypage_screen.dart';
+import 'package:clowing/screens/washing/washing_completed_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +60,8 @@ class _WashingMainScreenState extends State<WashingMainScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MyPageScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => WashingCompletedScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

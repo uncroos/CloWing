@@ -57,7 +57,7 @@ lib/
     │   ├── gender_screen.dart                   - 8월 2일 완성
     │   ├── age_screen.dart                      - 8월 2일 완성
     │   ├── height_screen.dart                   - 8월 2일 완성
-    │   └── login_successful_screen.dart
+    │   └── login_successful_screen.dart         - 8월 4일 완성
     └── splash/
         └── splash.dart                          - 8월 2일 완성
 ```
