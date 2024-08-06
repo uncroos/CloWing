@@ -1,4 +1,4 @@
-import 'package:clowing/screens/washing/washing_completed_screen.dart';
+import 'package:clowing/screens/washing/washing_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +18,7 @@ class _WashingMainScreenState extends State<WashingMainScreen> {
         centerTitle: true,
         automaticallyImplyLeading: false, // This removes the back button
       ),
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           // Top 2/3 background color
@@ -60,8 +61,7 @@ class _WashingMainScreenState extends State<WashingMainScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => WashingCompletedScreen()),
+                      MaterialPageRoute(builder: (context) => WashingScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
