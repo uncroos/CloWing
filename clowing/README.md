@@ -38,9 +38,9 @@ lib/
     │       └── finish_screen.dart               - 8월 5일 완성
     ├── washing/
     │   ├── washing_main.dart                    - 8월 3일 완성
-    │   ├── washing_screen.dart
-    │   ├── washing_details_screen.dart
-    │   └── washing_completed_screen.dart
+    │   ├── washing_screen.dart                  - 8월 6일 완성
+    │   ├── washing_details_screen.dart          - 8월 6일 완성
+    │   └── washing_completed_screen.dart        - 8월 6일 완성
     ├── ootd/
     │   ├── ootd_main.dart                       - 8월 3일 완성
     │   ├── choose_screen.dart

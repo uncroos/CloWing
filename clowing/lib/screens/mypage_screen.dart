@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import '../widgets/add_button.dart';
 
 class MyPageScreen extends StatefulWidget {
   @override
