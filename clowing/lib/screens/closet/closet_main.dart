@@ -17,6 +17,15 @@ class _ClosetMainScreenState extends State<ClosetMainScreen> {
         elevation: 0,
         centerTitle: true,
         automaticallyImplyLeading: false, // This removes the back button
+        actions: [
+          IconButton(
+            icon: Icon(Icons.person),
+            color: Colors.black,
+            onPressed: () {
+              // Define the action when the icon is pressed, e.g., navigate to profile screen
+            },
+          ),
+        ],
       ),
       body: Stack(
         children: [
