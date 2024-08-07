@@ -1,4 +1,4 @@
-import 'package:clowing/screens/mypage_screen.dart';
+import 'package:clowing/screens/ootd/ootd_completion_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +60,8 @@ class _OotdMainScreenState extends State<OotdMainScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MyPageScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => OotdCompletionScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

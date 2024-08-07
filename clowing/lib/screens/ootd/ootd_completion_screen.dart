@@ -1,12 +1,12 @@
 import 'package:clowing/screens/washing/washing_main.dart';
 import 'package:flutter/material.dart';
 
-class WashingCompletedScreen extends StatefulWidget {
+class OotdCompletionScreen extends StatefulWidget {
   @override
-  _WashingCompletedScreenState createState() => _WashingCompletedScreenState();
+  _OotdCompletionScreenState createState() => _OotdCompletionScreenState();
 }
 
-class _WashingCompletedScreenState extends State<WashingCompletedScreen> {
+class _OotdCompletionScreenState extends State<OotdCompletionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _WashingCompletedScreenState extends State<WashingCompletedScreen> {
                 top: 300.0), // Adjust this value to position the button
           ),
           Image.asset(
-            'assets/images/washing_pin.png', // Replace with your logo image asset path
+            'assets/images/ootd_pin.png', // Replace with your logo image asset path
             width: 300,
             height: 300,
           ),
@@ -50,7 +50,7 @@ class _WashingCompletedScreenState extends State<WashingCompletedScreen> {
         child: Container(
           height: 50,
           decoration: BoxDecoration(
-            color: Color(0xFFBEDABF),
+            color: Color(0xFFCCEDFF),
             borderRadius: BorderRadius.circular(7),
           ),
           child: Row(
