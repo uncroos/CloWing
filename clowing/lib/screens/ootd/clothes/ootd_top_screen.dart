@@ -1,9 +1,10 @@
 import 'package:clowing/screens/closet/add/add_screen.dart';
-import 'package:clowing/screens/closet/clothes/bag_screen.dart';
-import 'package:clowing/screens/closet/clothes/fashion_screen.dart';
-import 'package:clowing/screens/closet/clothes/low_screen.dart';
-import 'package:clowing/screens/closet/clothes/outer_screen.dart';
-import 'package:clowing/screens/closet/clothes/shoes_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_bag_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_fashion_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_low_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_outer_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_shoes_screen.dart';
+
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart'; // Import LowScreen
 
@@ -162,37 +163,37 @@ class _OotdTopScreenState extends State<OotdTopScreen> {
       case '상의':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TopScreen()),
+          MaterialPageRoute(builder: (context) => OotdTopScreen()),
         );
         break;
       case '하의':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => LowScreen()),
+          MaterialPageRoute(builder: (context) => OotdLowScreen()),
         );
         break;
       case '아우터':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => OuterScreen()),
+          MaterialPageRoute(builder: (context) => OotdOuterScreen()),
         );
         break;
       case '신발':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ShoesScreen()),
+          MaterialPageRoute(builder: (context) => OotdShoesScreen()),
         );
         break;
       case '가방':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => BagScreen()),
+          MaterialPageRoute(builder: (context) => OotdBagScreen()),
         );
         break;
       case '패션 소품':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => FashionScreen()),
+          MaterialPageRoute(builder: (context) => OotdFashionScreen()),
         );
         break;
       // Add more cases for other items if needed

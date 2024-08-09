@@ -1,4 +1,9 @@
 import 'package:clowing/screens/closet/add/add_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_bag_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_fashion_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_outer_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_shoes_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_top_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -157,7 +162,7 @@ class _OotdLowScreenState extends State<OotdLowScreen> {
       case '상의':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TopScreen()),
+          MaterialPageRoute(builder: (context) => OotdTopScreen()),
         );
         break;
       case '하의':
@@ -169,28 +174,27 @@ class _OotdLowScreenState extends State<OotdLowScreen> {
       case '아우터':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => OuterScreen()),
+          MaterialPageRoute(builder: (context) => OotdOuterScreen()),
         );
         break;
       case '신발':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ShoesScreen()),
+          MaterialPageRoute(builder: (context) => OotdShoesScreen()),
         );
         break;
       case '가방':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => OotdLowScreen()),
+          MaterialPageRoute(builder: (context) => OotdBagScreen()),
         );
         break;
       case '패션 소품':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => OotdLowScreen()),
+          MaterialPageRoute(builder: (context) => OotdFashionScreen()),
         );
         break;
-      // Add more cases for other items if needed
     }
   }
 }

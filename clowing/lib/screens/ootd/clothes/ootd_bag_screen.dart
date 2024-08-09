@@ -1,4 +1,8 @@
 import 'package:clowing/screens/closet/add/add_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_low_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_outer_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_shoes_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_top_screen.dart';
 
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
@@ -193,7 +197,6 @@ class _OotdBagScreenState extends State<OotdBagScreen> {
           MaterialPageRoute(builder: (context) => OotdFashionScreen()),
         );
         break;
-      // Add more cases for other items if needed
     }
   }
 }
