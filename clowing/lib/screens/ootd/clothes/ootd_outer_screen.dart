@@ -1,4 +1,5 @@
 import 'package:clowing/screens/closet/add/add_screen.dart';
+import 'package:clowing/screens/ootd/clothes/ootd_bag_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart'; // Import LowScreen
 
@@ -157,13 +158,13 @@ class _OuterScreenState extends State<OuterScreen> {
       case '상의':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TopScreen()),
+          MaterialPageRoute(builder: (context) => OotdBagScreen()),
         );
         break;
       case '하의':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => LowScreen()),
+          MaterialPageRoute(builder: (context) => OotdBagScreen()),
         );
         break;
       case '아우터':
@@ -175,19 +176,19 @@ class _OuterScreenState extends State<OuterScreen> {
       case '신발':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ShoesScreen()),
+          MaterialPageRoute(builder: (context) => OotdBagScreen()),
         );
         break;
       case '가방':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => BagScreen()),
+          MaterialPageRoute(builder: (context) => OotdBagScreen()),
         );
         break;
       case '패션 소품':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => FashionScreen()),
+          MaterialPageRoute(builder: (context) => OotdBagScreen()),
         );
         break;
       // Add more cases for other items if needed

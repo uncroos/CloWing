@@ -7,12 +7,12 @@ import 'package:clowing/screens/closet/clothes/top_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
-class ShoesScreen extends StatefulWidget {
+class OotdShoesScreen extends StatefulWidget {
   @override
-  _ShoesScreenState createState() => _ShoesScreenState();
+  _OotdShoesScreenState createState() => _OotdShoesScreenState();
 }
 
-class _ShoesScreenState extends State<ShoesScreen> {
+class _OotdShoesScreenState extends State<OotdShoesScreen> {
   final TextEditingController _searchController = TextEditingController();
 
   @override
@@ -168,7 +168,7 @@ class _ShoesScreenState extends State<ShoesScreen> {
       case '하의':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => LowScreen()),
+          MaterialPageRoute(builder: (context) => OotdShoesScreen()),
         );
         break;
       case '아우터':
@@ -180,7 +180,7 @@ class _ShoesScreenState extends State<ShoesScreen> {
       case '신발':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ShoesScreen()),
+          MaterialPageRoute(builder: (context) => OotdShoesScreen()),
         );
         break;
       case '가방':

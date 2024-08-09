@@ -7,12 +7,12 @@ import 'package:clowing/screens/closet/clothes/shoes_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart'; // Import LowScreen
 
-class TopScreen extends StatefulWidget {
+class OotdTopScreen extends StatefulWidget {
   @override
-  _TopScreenState createState() => _TopScreenState();
+  _OotdTopScreenState createState() => _OotdTopScreenState();
 }
 
-class _TopScreenState extends State<TopScreen> {
+class _OotdTopScreenState extends State<OotdTopScreen> {
   final TextEditingController _searchController = TextEditingController();
 
   @override
