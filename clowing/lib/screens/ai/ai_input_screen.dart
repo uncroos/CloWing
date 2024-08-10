@@ -1,3 +1,5 @@
+import 'package:clowing/widgets/ai_button.dart';
+import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -8,6 +10,19 @@ class AiInputScreen extends StatefulWidget {
 
 class _AiInputScreenState extends State<AiInputScreen> {
   String _selectedColor = '원하시는 색을 입력하세요'; // Default text
+
+  final Map<String, Color> _colorMap = {
+    "원하시는 색을 입력하세요": Colors.transparent,
+    "빨간색": Colors.red,
+    "주황색": Colors.orange,
+    "노란색": Colors.yellow,
+    "초록색": Colors.green,
+    "파랑색": Colors.blue,
+    "보라색": Colors.purple,
+    "핑크색": Colors.pink,
+    "회색": Colors.grey,
+    "검은색": Colors.black,
+  };
 
   void _showDialog(Widget child) {
     showCupertinoModalPopup<void>(
@@ -30,6 +45,7 @@ class _AiInputScreenState extends State<AiInputScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white, // Set background color to white
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -47,7 +63,7 @@ class _AiInputScreenState extends State<AiInputScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 30),
+            SizedBox(height: 300),
             Text(
               '원하시는 색을 입력하세요',
               style: TextStyle(
@@ -58,40 +74,22 @@ class _AiInputScreenState extends State<AiInputScreen> {
             SizedBox(height: 20),
             ChoiceBox(
               title: '색상',
-              options: [
-                "원하시는 색을 입력하세요",
-                "빨간색",
-                "파란색",
-                "녹색",
-                "노란색",
-                "검은색",
-              ],
+              options: _colorMap.keys.toList(),
+              colorMap: _colorMap,
               onSelected: (String selectedOption) {
                 setState(() {
                   _selectedColor = selectedOption;
                 });
               },
             ),
-            Spacer(), // This will take up the remaining space
-            ElevatedButton(
-              onPressed: () {
-                // Handle the recommendation logic here
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.grey,
-                minimumSize: Size(double.infinity, 50),
-              ),
-              child: Text(
-                '추천 받기',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
-              ),
+            SizedBox(
+              height: 240,
             ),
+            AiButton(),
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
@@ -99,12 +97,14 @@ class _AiInputScreenState extends State<AiInputScreen> {
 class ChoiceBox extends StatefulWidget {
   final String title; // ChoiceBox title
   final List<String> options; // List of selectable options
+  final Map<String, Color> colorMap; // Map of color names to color values
   final Function(String)
       onSelected; // Function to call when an option is selected
 
   ChoiceBox({
     required this.title,
     required this.options,
+    required this.colorMap,
     required this.onSelected,
   });
 
@@ -152,8 +152,19 @@ class _ChoiceBoxState extends State<ChoiceBox> {
           },
           children: List<Widget>.generate(widget.options.length, (int index) {
             return Center(
-              child: Text(
-                widget.options[index],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 20,
+                    height: 20,
+                    color: widget.colorMap[widget.options[index]],
+                  ),
+                  SizedBox(width: 8),
+                  Text(
+                    widget.options[index],
+                  ),
+                ],
               ),
             );
           }),
@@ -168,12 +179,22 @@ class _ChoiceBoxState extends State<ChoiceBox> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              widget.options[_selectedIndex],
-              style: TextStyle(
-                fontSize: 16.0,
-                color: _selectedIndex == 0 ? Colors.grey : Colors.black,
-              ),
+            Row(
+              children: [
+                Container(
+                  width: 20,
+                  height: 20,
+                  color: widget.colorMap[widget.options[_selectedIndex]],
+                ),
+                SizedBox(width: 8),
+                Text(
+                  widget.options[_selectedIndex],
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: _selectedIndex == 0 ? Colors.grey : Colors.black,
+                  ),
+                ),
+              ],
             ),
             Icon(Icons.arrow_drop_down, color: Colors.grey),
           ],

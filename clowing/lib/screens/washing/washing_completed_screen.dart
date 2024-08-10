@@ -16,12 +16,16 @@ class _WashingCompletedScreenState extends State<WashingCompletedScreen> {
         children: [
           Padding(
             padding: const EdgeInsets.only(
-                top: 300.0), // Adjust this value to position the button
+                top: 350.0), // Adjust this value to position the button
           ),
           Image.asset(
             'assets/images/washing_pin.png', // Replace with your logo image asset path
-            width: 300,
-            height: 300,
+            width: 180,
+            height: 180,
+          ),
+          Text(
+            '개시 완료',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           Spacer(), // Takes up the remaining space
           Padding(
