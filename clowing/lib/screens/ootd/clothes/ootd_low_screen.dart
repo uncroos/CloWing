@@ -5,6 +5,7 @@ import 'package:clowing/screens/ootd/clothes/ootd_outer_screen.dart';
 import 'package:clowing/screens/ootd/clothes/ootd_shoes_screen.dart';
 import 'package:clowing/screens/ootd/clothes/ootd_top_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
+import 'package:clowing/widgets/ootd_button.dart';
 import 'package:flutter/material.dart';
 
 class OotdLowScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _OotdLowScreenState extends State<OotdLowScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('내 옷장', style: TextStyle(color: Colors.black)),
+        title: const Text('룩북', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
@@ -81,53 +82,9 @@ class _OotdLowScreenState extends State<OotdLowScreen> {
             ),
           ),
           const SizedBox(
-            height: 50,
+            height: 90,
           ),
-          Expanded(
-            child: Row(
-              children: [
-                VerticalDivider(thickness: 1, width: 1),
-                Expanded(
-                  child: Container(
-                    color: Colors.white,
-                    child: Column(
-                      children: [
-                        Expanded(
-                          child: GridView.count(
-                            crossAxisCount: 2,
-                            children: [],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => AddScreen()),
-                              );
-                            },
-                            child: Text('하의 추가하기'),
-                            style: ElevatedButton.styleFrom(
-                              foregroundColor: Colors.white,
-                              backgroundColor: Colors.brown[200],
-                              textStyle: TextStyle(
-                                  fontWeight: FontWeight.w900, fontSize: 17),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              minimumSize: Size(double.infinity, 50),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          OotdButton(),
         ],
       ),
       bottomNavigationBar: BottomNavBar(),
