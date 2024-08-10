@@ -1,5 +1,6 @@
 import 'package:clowing/screens/start/age_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class GenderScreen extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class GenderScreen extends StatefulWidget {
 }
 
 class _GenderScreenState extends State<GenderScreen> {
-  String? _selectedGender; // Changed to String? to handle null values
+  String _selectedGender = '성별을 선택하세요';
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +17,13 @@ class _GenderScreenState extends State<GenderScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      backgroundColor: Colors.white, // Light blue background color
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30),
             Text(
               '성별을\n선택해주세요!',
               style: TextStyle(
@@ -41,34 +40,23 @@ class _GenderScreenState extends State<GenderScreen> {
               ),
             ),
             SizedBox(height: 8),
-            DropdownButton<String>(
-              isExpanded: true,
-              value: _selectedGender,
-              hint: Text('성별을 선택하세요'),
-              items: <DropdownMenuItem<String>>[
-                DropdownMenuItem<String>(
-                  value: '여자',
-                  child: Text('여자'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '남자',
-                  child: Text('남자'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '기타',
-                  child: Text('기타'),
-                ),
+            ChoiceBox(
+              title: '성별',
+              options: [
+                "성별을 선택하세요",
+                "여자",
+                "남자",
+                "기타",
               ],
-              onChanged: (String? newValue) {
+              onSelected: (String selectedOption) {
                 setState(() {
-                  _selectedGender = newValue;
+                  _selectedGender = selectedOption;
                 });
               },
             ),
-            Spacer(), // This will take up the remaining space
+            Spacer(),
             Padding(
-              padding: const EdgeInsets.only(
-                  bottom: 60.0), // Adjust this value to move the button up
+              padding: const EdgeInsets.only(bottom: 60.0),
               child: nextPageButton(),
             ),
           ],
@@ -110,6 +98,80 @@ class _GenderScreenState extends State<GenderScreen> {
               const SizedBox(width: 10),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ChoiceBox extends StatefulWidget {
+  final String title; // ChoiceBox title
+  final List<String> options; // List of selectable options
+  final Function(String)
+      onSelected; // Function to call when an option is selected
+
+  ChoiceBox({
+    required this.title,
+    required this.options,
+    required this.onSelected,
+  });
+
+  @override
+  _ChoiceBoxState createState() => _ChoiceBoxState();
+}
+
+class _ChoiceBoxState extends State<ChoiceBox> {
+  int _selectedIndex = 0; // Currently selected option index
+
+  void _showDialog(Widget child) {
+    showCupertinoModalPopup<void>(
+      context: context,
+      builder: (BuildContext context) => Container(
+        height: 216,
+        padding: const EdgeInsets.only(top: 6.0),
+        margin: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        color: CupertinoColors.systemBackground.resolveFrom(context),
+        child: SafeArea(
+          top: false,
+          child: child,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      onPressed: () => _showDialog(
+        CupertinoPicker(
+          magnification: 1.22,
+          squeeze: 1.2,
+          useMagnifier: true,
+          itemExtent: 32.0,
+          onSelectedItemChanged: (int selectedItem) {
+            setState(() {
+              _selectedIndex = selectedItem;
+              widget.onSelected(
+                  widget.options[selectedItem]); // Pass the selected option
+            });
+          },
+          children: List<Widget>.generate(widget.options.length, (int index) {
+            return Center(
+              child: Text(
+                widget.options[index],
+              ),
+            );
+          }),
+        ),
+      ),
+      child: Text(
+        widget.options[_selectedIndex],
+        style: TextStyle(
+          fontSize: 22.0,
+          color: _selectedIndex == 0 ? Colors.grey : Colors.black,
         ),
       ),
     );
