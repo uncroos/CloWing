@@ -1,4 +1,5 @@
 import 'package:clowing/screens/closet/clothes/top_screen.dart';
+import 'package:clowing/screens/mypage_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,10 @@ class _ClosetMainScreenState extends State<ClosetMainScreen> {
             icon: Icon(Icons.person),
             color: Colors.black,
             onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyPageScreen()),
+              );
               // Define the action when the icon is pressed, e.g., navigate to profile screen
             },
           ),

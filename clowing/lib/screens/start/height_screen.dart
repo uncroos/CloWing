@@ -1,5 +1,6 @@
 import 'package:clowing/screens/start/login_successful_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class HeightScreen extends StatefulWidget {
   @override
@@ -7,7 +8,8 @@ class HeightScreen extends StatefulWidget {
 }
 
 class _HeightScreenState extends State<HeightScreen> {
-  String? _selectedGender; // Changed to String? to handle null values
+  String _selectedHeight = '키를 선택하세요';
+  String _selectedWeight = '몸무게를 선택하세요';
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +18,13 @@ class _HeightScreenState extends State<HeightScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      backgroundColor:
-          Color.fromARGB(255, 255, 255, 255), // Light blue background color
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30),
             Text(
               '추가정보를\n입력해주세요!',
               style: TextStyle(
@@ -42,65 +41,29 @@ class _HeightScreenState extends State<HeightScreen> {
               ),
             ),
             SizedBox(height: 8),
-            DropdownButton<String>(
-              isExpanded: true,
-              value: _selectedGender,
-              hint: Text('키를 선택하세요'),
-              items: <DropdownMenuItem<String>>[
-                DropdownMenuItem<String>(
-                  value: '149cm 이하',
-                  child: Text('149cm 이하'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '150cm',
-                  child: Text('150cm'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '155cm',
-                  child: Text('155cm'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '160cm',
-                  child: Text('160cm'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '165cm',
-                  child: Text('165cm'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '170cm',
-                  child: Text('170cm'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '175cm',
-                  child: Text('175cm'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '180cm',
-                  child: Text('180cm'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '185cm',
-                  child: Text('185cm'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '190cm',
-                  child: Text('190cm'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '191cm 이상',
-                  child: Text('191cm 이상'),
-                ),
+            ChoiceBox(
+              title: '키',
+              options: [
+                "키를 선택해주세요",
+                "149cm 이하",
+                "150cm",
+                "155cm",
+                "160cm",
+                "165cm",
+                "170cm",
+                "175cm",
+                "180cm",
+                "185cm",
+                "190cm",
+                "191cm 이상"
               ],
-              onChanged: (String? newValue) {
+              onSelected: (String selectedOption) {
                 setState(() {
-                  _selectedGender = newValue;
+                  _selectedHeight = selectedOption;
                 });
               },
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             Text(
               '몸무게',
               style: TextStyle(
@@ -109,82 +72,35 @@ class _HeightScreenState extends State<HeightScreen> {
               ),
             ),
             SizedBox(height: 8),
-            DropdownButton<String>(
-              isExpanded: true,
-              value: _selectedGender,
-              hint: Text('몸무게를 선택하세요'),
-              items: <DropdownMenuItem<String>>[
-                DropdownMenuItem<String>(
-                  value: '39kg 이하',
-                  child: Text('39kg 이하'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '40kg',
-                  child: Text('40kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '45kg',
-                  child: Text('45kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '50kg',
-                  child: Text('50kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '55kg',
-                  child: Text('55kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '60kg',
-                  child: Text('60kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '65kg',
-                  child: Text('65kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '70kg',
-                  child: Text('70kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '75kg',
-                  child: Text('75kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '80kg',
-                  child: Text('80kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '85kg',
-                  child: Text('85kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '90kg',
-                  child: Text('90kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '95kg',
-                  child: Text('95kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '100kg',
-                  child: Text('100kg'),
-                ),
-                DropdownMenuItem<String>(
-                  value: '101kg 이상',
-                  child: Text('101kg 이상'),
-                ),
+            ChoiceBox(
+              title: '몸무게',
+              options: [
+                "몸무게를 선택해주세요",
+                "39kg 이하",
+                "40kg",
+                "45kg",
+                "50kg",
+                "55kg",
+                "60kg",
+                "65kg",
+                "70kg",
+                "75kg",
+                "80kg",
+                "85kg",
+                "90kg",
+                "95kg",
+                "100kg",
+                "101kg 이상"
               ],
-              onChanged: (String? newValue) {
+              onSelected: (String selectedOption) {
                 setState(() {
-                  _selectedGender = newValue;
+                  _selectedWeight = selectedOption;
                 });
               },
             ),
-            Spacer(), // This will take up the remaining space
+            Spacer(),
             Padding(
-              padding: const EdgeInsets.only(
-                  bottom: 60.0), // Adjust this value to move the button up
+              padding: const EdgeInsets.only(bottom: 60.0),
               child: nextPageButton(),
             ),
           ],
@@ -196,7 +112,6 @@ class _HeightScreenState extends State<HeightScreen> {
   Widget nextPageButton() {
     return InkWell(
       onTap: () {
-        // Navigate to the login successful screen
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => LoginSuccessfulScreen()),
@@ -226,6 +141,80 @@ class _HeightScreenState extends State<HeightScreen> {
               const SizedBox(width: 10),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ChoiceBox extends StatefulWidget {
+  final String title; // ChoiceBox title
+  final List<String> options; // List of selectable options
+  final Function(String)
+      onSelected; // Function to call when an option is selected
+
+  ChoiceBox({
+    required this.title,
+    required this.options,
+    required this.onSelected,
+  });
+
+  @override
+  _ChoiceBoxState createState() => _ChoiceBoxState();
+}
+
+class _ChoiceBoxState extends State<ChoiceBox> {
+  int _selectedIndex = 0; // Currently selected option index
+
+  void _showDialog(Widget child) {
+    showCupertinoModalPopup<void>(
+      context: context,
+      builder: (BuildContext context) => Container(
+        height: 216,
+        padding: const EdgeInsets.only(top: 6.0),
+        margin: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        color: CupertinoColors.systemBackground.resolveFrom(context),
+        child: SafeArea(
+          top: false,
+          child: child,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      onPressed: () => _showDialog(
+        CupertinoPicker(
+          magnification: 1.22,
+          squeeze: 1.2,
+          useMagnifier: true,
+          itemExtent: 32.0,
+          onSelectedItemChanged: (int selectedItem) {
+            setState(() {
+              _selectedIndex = selectedItem;
+              widget.onSelected(
+                  widget.options[selectedItem]); // Pass the selected option
+            });
+          },
+          children: List<Widget>.generate(widget.options.length, (int index) {
+            return Center(
+              child: Text(
+                widget.options[index],
+              ),
+            );
+          }),
+        ),
+      ),
+      child: Text(
+        widget.options[_selectedIndex],
+        style: TextStyle(
+          fontSize: 22.0,
+          color: _selectedIndex == 0 ? Colors.grey : Colors.black,
         ),
       ),
     );

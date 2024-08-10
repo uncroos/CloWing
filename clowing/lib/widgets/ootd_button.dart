@@ -1,4 +1,3 @@
-import 'package:clowing/screens/closet/add/add_screen.dart';
 import 'package:clowing/screens/ootd/ootd_completion_screen.dart';
 import 'package:flutter/material.dart';
 
