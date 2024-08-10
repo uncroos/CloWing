@@ -1,4 +1,4 @@
-import 'package:clowing/screens/mypage_screen.dart';
+import 'package:clowing/screens/ai/ai_input_screen.dart';
 import 'package:clowing/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +60,7 @@ class _AiMainScreenState extends State<AiMainScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MyPageScreen()),
+                      MaterialPageRoute(builder: (context) => AiInputScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
