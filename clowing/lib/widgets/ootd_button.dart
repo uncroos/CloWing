@@ -1,4 +1,5 @@
 import 'package:clowing/screens/closet/add/add_screen.dart';
+import 'package:clowing/screens/ootd/ootd_completion_screen.dart';
 import 'package:flutter/material.dart';
 
 class OotdButton extends StatelessWidget {
@@ -17,7 +18,7 @@ class OotdButton extends StatelessWidget {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AddScreen()),
+          MaterialPageRoute(builder: (context) => OotdCompletionScreen()),
         );
       },
       child: Container(

@@ -1,4 +1,3 @@
-import 'package:clowing/screens/closet/add/add_screen.dart';
 import 'package:clowing/screens/ootd/clothes/ootd_bag_screen.dart';
 import 'package:clowing/screens/ootd/clothes/ootd_fashion_screen.dart';
 import 'package:clowing/screens/ootd/clothes/ootd_outer_screen.dart';
@@ -34,7 +33,7 @@ class _OotdLowScreenState extends State<OotdLowScreen> {
             child: Container(
               height: 50.0,
               decoration: BoxDecoration(
-                color: const Color(0xFFF1E5DB),
+                color: const Color(0xFFCCEDFF),
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Row(

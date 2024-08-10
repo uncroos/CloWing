@@ -1,4 +1,3 @@
-import 'package:clowing/screens/closet/add/add_screen.dart';
 import 'package:clowing/screens/ootd/clothes/ootd_bag_screen.dart';
 import 'package:clowing/screens/ootd/clothes/ootd_fashion_screen.dart';
 import 'package:clowing/screens/ootd/clothes/ootd_low_screen.dart';
@@ -20,7 +19,7 @@ class _OotdOuterScreenState extends State<OotdOuterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('내 옷장', style: TextStyle(color: Colors.black)),
+        title: const Text('룩북', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
@@ -34,7 +33,7 @@ class _OotdOuterScreenState extends State<OotdOuterScreen> {
             child: Container(
               height: 50.0,
               decoration: BoxDecoration(
-                color: const Color(0xFFF1E5DB),
+                color: const Color(0xFFCCEDFF),
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Row(
