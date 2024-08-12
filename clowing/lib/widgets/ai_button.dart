@@ -1,4 +1,5 @@
 import 'package:clowing/screens/ai/ai_complete_screen.dart';
+import 'package:clowing/screens/ai/ai_running_screen.dart';
 import 'package:flutter/material.dart';
 
 class AiButton extends StatelessWidget {
@@ -17,7 +18,7 @@ class AiButton extends StatelessWidget {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AiCompleteScreen()),
+          MaterialPageRoute(builder: (context) => AiRunningScreen()),
         );
       },
       child: Container(

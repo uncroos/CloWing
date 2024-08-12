@@ -1,3 +1,4 @@
+import 'package:clowing/screens/ai/ai_main.dart';
 import 'package:clowing/screens/ootd/ootd_main.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,7 @@ class _AiCompleteScreenState extends State<AiCompleteScreen> {
         // Navigate to the closet main screen
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => OotdMainScreen()),
+          MaterialPageRoute(builder: (context) => AiMainScreen()),
         );
       },
       child: Card(
